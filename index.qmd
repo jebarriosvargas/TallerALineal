@@ -1,3 +1,9 @@
-# Preface {.unnumbered}
+---
+date-format: short
+author-title: "Autores"
+published-title: "Fecha"
+---
+
+# Prefacio {.unnumbered}
 
 Aquí encontrarán unas notas del taller titulado **Un acercamiento al álgebra lineal** impartido en la Facultad de Química, UNAM.
