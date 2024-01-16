@@ -13,3 +13,24 @@ Típicamente las *cosas* se llaman vectores.
 :::
 
 Las operaciones cumplen las siguientes propiedades. 
+
+::: {.callout-note icon=false collapse="true"}
+## 1. Cerradura de la suma
+
+Para cada par de elementos $\vec{v},\,\vec{w}$ en $\mathbf{V}$ existe un único elemento $\vec{v}+\vec{w}$ en $\mathbf{V}$. 
+
+:::
+
+::: {.callout-note icon=false collapse="true"}
+## 2. Cerradura de la multiplicación
+
+Para cada elemento $\alpha$ en $\mathbb{F}$ y cada elemento $\vec{v}$ en $\mathbf{V}$ existe un único elemento $\alpha \vec{v}$ en $\mathbf{V}$. 
+
+:::
+
+::: {.callout-note icon=false collapse="true"}
+## 3. Conmutatividad de la suma
+
+Para cada par de elementos $\vec{v},\,\vec{w}$ en $\mathbf{V}$ se cumple que $\vec{v}+\vec{w}=\vec{w}+\vec{v}$ 
+
+:::

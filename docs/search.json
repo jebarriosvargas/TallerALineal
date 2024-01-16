@@ -64,7 +64,7 @@
     "href": "1_introEV.html",
     "title": "1  Introducción",
     "section": "",
-    "text": "Definición de espacio vectorial\n\n\n\n\n\nUn espacio vectorial \\(\\mathbf{V}\\) sobre un campo escalar \\(\\mathbb{F}\\) consisten de un conjunto de cosas en donde se definen dos operaciones:\n\nla suma entre cosas, y\nla multiplicación de una cosa por un escalar.\n\nTípicamente las cosas se llaman vectores.",
+    "text": "Definición de espacio vectorial\n\n\n\n\n\nUn espacio vectorial \\(\\mathbf{V}\\) sobre un campo escalar \\(\\mathbb{F}\\) consisten de un conjunto de cosas en donde se definen dos operaciones:\n\nla suma entre cosas, y\nla multiplicación de una cosa por un escalar.\n\nTípicamente las cosas se llaman vectores.\n\n\n\nLas operaciones cumplen las siguientes propiedades.\n\n\n\n\n\n\n1. Cerradura de la suma\n\n\n\n\n\nPara cada par de elementos \\(\\vec{v},\\,\\vec{w}\\) en \\(\\mathbf{V}\\) existe un único elemento \\(\\vec{v}+\\vec{w}\\) en \\(\\mathbf{V}\\).\n\n\n\n\n\n\n\n\n\n2. Cerradura de la multiplicación\n\n\n\n\n\nPara cada elemento \\(\\alpha\\) en \\(\\mathbb{F}\\) y cada elemento \\(\\vec{v}\\) en \\(\\mathbf{V}\\) existe un único elemento \\(\\alpha \\vec{v}\\) en \\(\\mathbf{V}\\).\n\n\n\n\n\n\n\n\n\n3. Conmutatividad de la suma\n\n\n\n\n\nPara cada par de elementos \\(\\vec{v},\\,\\vec{w}\\) en \\(\\mathbf{V}\\) se cumple que \\(\\vec{v}+\\vec{w}=\\vec{w}+\\vec{v}\\)",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introducción</span>"
     ]
