@@ -1,0 +1,3 @@
+# Espacio generado
+
+- vecctores linealmente independientes

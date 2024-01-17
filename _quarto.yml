@@ -10,6 +10,13 @@ book:
     - index.qmd
     - 1_introEV.qmd
     - 2_ejemplosEV.qmd
+    - 3_subEV.qmd
+    - 4_combinacionlineal.qmd
+    - 5_espaciogenerado.qmd
+    - 6_bases.qmd
+    - 7_productointerior.qmd
+    - 8_transflineales.qmd
+    - 9_modosnormales.qmd
     - references.qmd
 
 bibliography: references.bib
