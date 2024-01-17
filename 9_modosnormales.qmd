@@ -1,2 +1,103 @@
 # Modos normales de vibración
 
+
+## Tres masas lineales
+
+
+```{python}
+
+from pylab import *
+import plotly.graph_objects as go
+
+
+
+def Graficar(ω,uvec,m1,m2,m3):
+
+    T      = 2*pi/ω   # periodo
+    veces  = 10       # número de periodos
+    masa   = np.array([m1,m2,m3])
+
+    # Posición en el tiempo cero
+    t0 = 0
+    u1 = uvec[0]*exp(1J*ω*t0)/sqrt(m1)
+    u2 = uvec[1]*exp(1J*ω*t0)/sqrt(m2)
+    u3 = uvec[2]*exp(1J*ω*t0)/sqrt(m3)
+    x0 = np.array([0+u1, 2+u2, 4+u3])
+    y0 = np.array([   0,    0,    0])
+
+    time   = linspace(t0,veces*T,endpoint=False)
+
+    Frames = []
+    for t in time:
+        u1 = uvec[0]*exp(1J*ω*t)/sqrt(m1)
+        u2 = uvec[1]*exp(1J*ω*t)/sqrt(m2)
+        u3 = uvec[2]*exp(1J*ω*t)/sqrt(m3)
+        x  = np.array([0+u1, 2+u2, 4+u3])
+        y  = np.array([   0,    0,    0])
+        Frames.append( go.Frame(data=[ go.Scatter(x=x.real,
+                                                y=y.real,
+                                                line_color='blue',
+                                                mode="lines",showlegend=False),
+                                    go.Scatter(x=x.real,
+                                                y=y.real,
+                                                mode="markers",
+                                                marker=dict(color="red",size=40*sqrt(masa)/max(sqrt(masa))),
+                                                name=f'time = {t:.2f}')
+                                        ]) )
+    fig = go.Figure(
+        data = [go.Scatter(x=x0.real,
+                        y=y0.real,
+                        line_color='blue',
+                        mode="lines",showlegend=False),
+                go.Scatter(x=x0.real, 
+                        y=y0.real,
+                        mode="markers",
+                        marker=dict(color="red",size=40*sqrt(masa)/max(sqrt(masa))),
+                        name=f'time = {t0:.2f}')
+                        ],
+        layout = go.Layout(xaxis=dict(range=[  -1.5,   5.5], autorange=False),
+                        yaxis=dict(range=[-0.5, 0.5], autorange=False),
+                        showlegend=True,
+                        title=f"Tres masas: frecuencia={ω:.2f}",
+                        updatemenus=[dict(type    = "buttons",
+                                            direction = "right",
+                                            buttons = [dict(label="Play",
+                                                            method  = "animate",
+                                                            args    = [None,
+                                                                        dict(frame = dict(duration=100,redraw=True), 
+                                                                            transition  = dict(duration=4),
+                                                                            fromcurrent = True,
+                                                                            mode        = 'immediate')])])]),
+        frames = Frames
+    )
+
+    fig.show()
+    return
+```
+
+```{python}
+
+κ12,κ23   = 1,1
+m1,m2,m3  = 5,5,1
+
+D = np.array([
+    [          κ12/m1, -κ12/sqrt(m1*m2),                0],
+    [-κ12/sqrt(m1*m2),     (κ12+κ23)/m2, -κ23/sqrt(m2*m3)],
+    [               0, -κ23/sqrt(m2*m3),     κ23/sqrt(m3)]
+])
+
+ω2,Avec = eigh(D)
+```
+
+```{python}
+ω    = sqrt(ω2[1])
+uvec = Avec.T[1]
+Graficar(ω,uvec,m1,m2,m3)
+```
+
+```{python}
+ω    = sqrt(ω2[2])
+uvec = Avec.T[2]
+Graficar(ω,uvec,m1,m2,m3)
+
+```
